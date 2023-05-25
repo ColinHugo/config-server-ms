@@ -1,0 +1,28 @@
+services:
+
+  hotels:
+    image: hcolin/hotels:latest
+    mem_limit: 800m
+    ports:
+      - "5000:5000"
+    networks:
+      - ms-java-hotel
+
+  rooms:
+    image: hcolin/rooms:latest
+    mem_limit: 800m
+    ports:
+      - "5010:5010"
+    networks:
+      - ms-java-hotel
+
+  reservations:
+    image: hcolin/reservations:latest
+    mem_limit: 800m
+    ports:
+      - "5020:5020"
+    networks:
+      - ms-java-hotel
+
+networks:
+  ms-java-hotel:
